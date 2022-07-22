@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59910288AA8EF00F0C676 /* AppDelegate.swift */; };
 		67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59912288AA8EF00F0C676 /* SceneDelegate.swift */; };
-		67E59915288AA8EF00F0C676 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59914288AA8EF00F0C676 /* ViewController.swift */; };
 		67E59918288AA8EF00F0C676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E59916288AA8EF00F0C676 /* Main.storyboard */; };
 		67E5991A288AA8F100F0C676 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E59919288AA8F100F0C676 /* Assets.xcassets */; };
 		67E5991D288AA8F100F0C676 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E5991B288AA8F100F0C676 /* LaunchScreen.storyboard */; };
+		67E59925288AACD100F0C676 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59924288AACD100F0C676 /* SelectCollectionViewController.swift */; };
+		67E59929288AB7B300F0C676 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59928288AB7B300F0C676 /* SelectCollectionViewCell.swift */; };
+		67E5992B288AC38E00F0C676 /* Damagochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5992A288AC38E00F0C676 /* Damagochi.swift */; };
+		67E5992E288AC57500F0C676 /* DamagochiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5992D288AC57500F0C676 /* DamagochiInfo.swift */; };
+		67E59930288ACB5100F0C676 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5992F288ACB5100F0C676 /* ColorSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67E5990D288AA8EF00F0C676 /* Damagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Damagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E59910288AA8EF00F0C676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E59912288AA8EF00F0C676 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		67E59914288AA8EF00F0C676 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		67E59917288AA8EF00F0C676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67E59919288AA8F100F0C676 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67E5991C288AA8F100F0C676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67E5991E288AA8F100F0C676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E59924288AACD100F0C676 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
+		67E59928288AB7B300F0C676 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		67E5992A288AC38E00F0C676 /* Damagochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damagochi.swift; sourceTree = "<group>"; };
+		67E5992D288AC57500F0C676 /* DamagochiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagochiInfo.swift; sourceTree = "<group>"; };
+		67E5992F288ACB5100F0C676 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,41 @@
 			children = (
 				67E59910288AA8EF00F0C676 /* AppDelegate.swift */,
 				67E59912288AA8EF00F0C676 /* SceneDelegate.swift */,
-				67E59914288AA8EF00F0C676 /* ViewController.swift */,
-				67E59916288AA8EF00F0C676 /* Main.storyboard */,
+				67E5992C288AC3A000F0C676 /* Model */,
+				67E59927288AB55B00F0C676 /* View */,
+				67E59926288AB54C00F0C676 /* Controller */,
 				67E59919288AA8F100F0C676 /* Assets.xcassets */,
 				67E5991B288AA8F100F0C676 /* LaunchScreen.storyboard */,
 				67E5991E288AA8F100F0C676 /* Info.plist */,
 			);
 			path = Damagochi;
+			sourceTree = "<group>";
+		};
+		67E59926288AB54C00F0C676 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67E59924288AACD100F0C676 /* SelectCollectionViewController.swift */,
+				67E59928288AB7B300F0C676 /* SelectCollectionViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67E59927288AB55B00F0C676 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67E59916288AA8EF00F0C676 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67E5992C288AC3A000F0C676 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67E5992A288AC38E00F0C676 /* Damagochi.swift */,
+				67E5992D288AC57500F0C676 /* DamagochiInfo.swift */,
+				67E5992F288ACB5100F0C676 /* ColorSet.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E59915288AA8EF00F0C676 /* ViewController.swift in Sources */,
+				67E59929288AB7B300F0C676 /* SelectCollectionViewCell.swift in Sources */,
+				67E59930288ACB5100F0C676 /* ColorSet.swift in Sources */,
+				67E5992B288AC38E00F0C676 /* Damagochi.swift in Sources */,
+				67E59925288AACD100F0C676 /* SelectCollectionViewController.swift in Sources */,
 				67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */,
 				67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */,
+				67E5992E288AC57500F0C676 /* DamagochiInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

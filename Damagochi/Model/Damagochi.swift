@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Damagochi{
+    var image : String?
+    var name: String?
+
+    
+}
