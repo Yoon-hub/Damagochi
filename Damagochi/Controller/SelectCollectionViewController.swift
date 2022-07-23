@@ -10,11 +10,12 @@ import UIKit
 
 
 class SelectCollectionViewController: UICollectionViewController {
+    let damagochiInfo = DamagochiInfo()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewLayout()
-        view.backgroundColor = ColorSet.background
+        
 
     }
     
@@ -23,19 +24,15 @@ class SelectCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let damagochiInfo = DamagochiInfo()
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectCollectionViewCell", for: indexPath) as! SelectCollectionViewCell
         
-        if indexPath.row <= 2{
-            cell.setting(data: damagochiInfo.damagochi[indexPath.row])
-        } else {
-            cell.setting(data: damagochiInfo.damagochi.last!)
-        }
+        indexPath.row <= damagochiInfo.damagochi.count - 1 ? cell.setting(data: damagochiInfo.damagochi[indexPath.row]) : cell.setting(data: damagochiInfo.damagochi.last!)
         return cell
     }
     
     func collectionViewLayout(){
-        
+        collectionView.backgroundColor = ColorSet.background
         let layout =  UICollectionViewFlowLayout()
         let spacing : CGFloat = 4
         let width = UIScreen.main.bounds.width - (spacing * 4)
@@ -45,8 +42,17 @@ class SelectCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 25
         layout.minimumInteritemSpacing = spacing
         collectionView.collectionViewLayout = layout
-        
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "StartPopupViewController") as! StartPopupViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        vc.selectdamagochi = indexPath.row <= damagochiInfo.damagochi.count - 1 ? damagochiInfo.damagochi[indexPath.row] : damagochiInfo.damagochi.last
+        
+        self.present(vc, animated: true)
+        
+    }
 
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct Damagochi{
     var image : String?
-    var name: String?
-
+    let name: String?
+    var explain = "준비중이에요"
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67D608D0288B854E008BFB3B /* StartPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D608CF288B854E008BFB3B /* StartPopupViewController.swift */; };
+		67D608D2288B8B11008BFB3B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */; };
 		67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59910288AA8EF00F0C676 /* AppDelegate.swift */; };
 		67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59912288AA8EF00F0C676 /* SceneDelegate.swift */; };
 		67E59918288AA8EF00F0C676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E59916288AA8EF00F0C676 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67D608CF288B854E008BFB3B /* StartPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPopupViewController.swift; sourceTree = "<group>"; };
+		67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		67E5990D288AA8EF00F0C676 /* Damagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Damagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E59910288AA8EF00F0C676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E59912288AA8EF00F0C676 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			children = (
 				67E59924288AACD100F0C676 /* SelectCollectionViewController.swift */,
 				67E59928288AB7B300F0C676 /* SelectCollectionViewCell.swift */,
+				67D608CF288B854E008BFB3B /* StartPopupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 				67E5992A288AC38E00F0C676 /* Damagochi.swift */,
 				67E5992D288AC57500F0C676 /* DamagochiInfo.swift */,
 				67E5992F288ACB5100F0C676 /* ColorSet.swift */,
+				67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			files = (
 				67E59929288AB7B300F0C676 /* SelectCollectionViewCell.swift in Sources */,
 				67E59930288ACB5100F0C676 /* ColorSet.swift in Sources */,
+				67D608D0288B854E008BFB3B /* StartPopupViewController.swift in Sources */,
 				67E5992B288AC38E00F0C676 /* Damagochi.swift in Sources */,
 				67E59925288AACD100F0C676 /* SelectCollectionViewController.swift in Sources */,
 				67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */,
 				67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */,
+				67D608D2288B8B11008BFB3B /* UILabel+Extension.swift in Sources */,
 				67E5992E288AC57500F0C676 /* DamagochiInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,8 +341,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,7 +354,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,8 +371,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +384,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
