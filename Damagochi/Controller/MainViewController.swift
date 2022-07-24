@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func bobButtonClicked(_ sender: Any) {
+        view.endEditing(true)
         guard let bobtext = bobTextField.text, Int(bobtext) != nil else {
             if bobTextField.text == ""{
                 level["bob"]! += 1
@@ -79,19 +80,22 @@ class MainViewController: UIViewController {
         }
         
       if Int(bobtext)! > 49 {
-            self.view.makeToast("그렇게 많이는 못먹어요 우엨")
+          self.view.makeToast("그렇게 많이는 못먹어요ㅠ", duration: 3.0, position: .center)
             talkLabel.text = "우엨ㅋ웽엨"
             bobTextField.text = ""
         }
         else{
             level["bob"]! += Int(bobtext)!
             bobTextField.text = ""
+            levelUpdateCheck()
         }
-        levelUpdateCheck()
+        
     }
     
     @IBAction func waterButtonClicked(_ sender: Any) {
+        view.endEditing(true)
         guard let watertext = waterTextField.text, Int(watertext) != nil else {
+          
             if waterTextField.text == ""{
                 level["water"]! += 1
                 levelUpdateCheck()
@@ -104,15 +108,17 @@ class MainViewController: UIViewController {
         }
         
       if Int(watertext)! > 99 {
-            self.view.makeToast("그렇게 많이는 못마셔요 우엨")
+          self.view.makeToast("그렇게 많이는 못마셔요ㅠ", duration: 3.0, position: .center)
             talkLabel.text = "우엨ㅋ웽엨"
             waterTextField.text = ""
         }
         else{
+            
             level["water"]! += Int(watertext)!
             waterTextField.text = ""
+            levelUpdateCheck()
         }
-        levelUpdateCheck()
+        
     }
     
     
