@@ -53,11 +53,11 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorSet.font]
         
         //standard, scrollEdge 설정
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = ColorSet.background
-        appearance.titleTextAttributes = [.foregroundColor: ColorSet.font]
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = ColorSet.background
+//        appearance.titleTextAttributes = [.foregroundColor: ColorSet.font]
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
         damagochiNameLabel.damagochiFont(fontSize: 17)
         talkLabel.textColor = ColorSet.font
@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
                 level["bob"]! += 1
                 levelUpdateCheck()
             }else{
-                self.view.makeToast("숫자만 입력해줘요오ㅠ")
+                self.view.makeToast("숫자만 입력해줘요오ㅠ", duration: 3.0, position: .center)
                 talkLabel.text = "밥줘요!!"
                 bobTextField.text = ""
             }
@@ -96,7 +96,7 @@ class MainViewController: UIViewController {
                 level["water"]! += 1
                 levelUpdateCheck()
             }else{
-                self.view.makeToast("숫자만 입력해줘요오ㅠ")
+                self.view.makeToast("숫자만 입력해줘요오ㅠ", duration: 3.0, position: .center)
                 talkLabel.text = "물줘요!!"
                 waterTextField.text = ""
             }
