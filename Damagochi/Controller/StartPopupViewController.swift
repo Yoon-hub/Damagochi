@@ -10,6 +10,7 @@ import UIKit
 class StartPopupViewController: UIViewController {
     
     var selectdamagochi: Damagochi!
+    var startButtonTitle = "시작하기"
     
     @IBOutlet weak var damagochiImageView: UIImageView!
     @IBOutlet weak var damagochiLabel: UILabel!
@@ -24,6 +25,7 @@ class StartPopupViewController: UIViewController {
         desgin()
         buttonDesgin(button: cancelButton)
         buttonDesgin(button: startButton)
+        startButton.setTitle(startButtonTitle, for: .normal)
     }
     
     func desgin(){
@@ -48,6 +50,22 @@ class StartPopupViewController: UIViewController {
         }
     }
 
-
+    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func startButtonClicked(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        UserDefaults.standard.set(selectdamagochi.name, forKey: "damaName")
+        UserDefaults.standard.set(selectdamagochi.damagochiLevelImage, forKey: "image")
+        //vc.damagochi = selectdamagochi
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true)
+        
+    }
+    
+    
 
 }

@@ -11,10 +11,12 @@ import UIKit
 
 class SelectCollectionViewController: UICollectionViewController {
     let damagochiInfo = DamagochiInfo()
+    var titleName = "다마고치 선택하기"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewLayout()
+        navigationItem.title = titleName
         
 
     }
@@ -47,6 +49,9 @@ class SelectCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "StartPopupViewController") as! StartPopupViewController
+        if titleName == "다마고치 변경하기"{
+            vc.startButtonTitle = "변경하기"
+        }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.selectdamagochi = indexPath.row <= damagochiInfo.damagochi.count - 1 ? damagochiInfo.damagochi[indexPath.row] : damagochiInfo.damagochi.last

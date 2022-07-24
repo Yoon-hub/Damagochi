@@ -11,5 +11,6 @@ struct Damagochi{
     var image : String?
     let name: String?
     var explain = "준비중이에요"
+    var damagochiLevelImage: [String]?
     
 }

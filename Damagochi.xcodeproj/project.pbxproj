@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67BBFC1A288D65FE00D3816B /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBFC19288D65FE00D3816B /* SettingTableViewController.swift */; };
+		67BBFC1C288D6EDD00D3816B /* NickNameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBFC1B288D6EDD00D3816B /* NickNameSettingViewController.swift */; };
+		67C10A08288CC7B5006C2D6C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */; };
+		67C10A0A288CEC87006C2D6C /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C10A09288CEC87006C2D6C /* UIButton+Extension.swift */; };
+		67C10A0D288D1053006C2D6C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 67C10A0C288D1053006C2D6C /* Toast */; };
+		67C10A12288D3084006C2D6C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 67C10A11288D3084006C2D6C /* IQKeyboardManagerSwift */; };
+		67C10A14288D32E3006C2D6C /* DamagochiTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C10A13288D32E3006C2D6C /* DamagochiTalk.swift */; };
 		67D608D0288B854E008BFB3B /* StartPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D608CF288B854E008BFB3B /* StartPopupViewController.swift */; };
 		67D608D2288B8B11008BFB3B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */; };
+		67D608D4288C95EA008BFB3B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D608D3288C95EA008BFB3B /* MainViewController.swift */; };
 		67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59910288AA8EF00F0C676 /* AppDelegate.swift */; };
 		67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E59912288AA8EF00F0C676 /* SceneDelegate.swift */; };
 		67E59918288AA8EF00F0C676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E59916288AA8EF00F0C676 /* Main.storyboard */; };
@@ -22,8 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67BBFC19288D65FE00D3816B /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		67BBFC1B288D6EDD00D3816B /* NickNameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameSettingViewController.swift; sourceTree = "<group>"; };
+		67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		67C10A09288CEC87006C2D6C /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		67C10A13288D32E3006C2D6C /* DamagochiTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagochiTalk.swift; sourceTree = "<group>"; };
 		67D608CF288B854E008BFB3B /* StartPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPopupViewController.swift; sourceTree = "<group>"; };
 		67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		67D608D3288C95EA008BFB3B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		67E5990D288AA8EF00F0C676 /* Damagochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Damagochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E59910288AA8EF00F0C676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E59912288AA8EF00F0C676 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67C10A0D288D1053006C2D6C /* Toast in Frameworks */,
+				67C10A12288D3084006C2D6C /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +102,9 @@
 				67E59924288AACD100F0C676 /* SelectCollectionViewController.swift */,
 				67E59928288AB7B300F0C676 /* SelectCollectionViewCell.swift */,
 				67D608CF288B854E008BFB3B /* StartPopupViewController.swift */,
+				67D608D3288C95EA008BFB3B /* MainViewController.swift */,
+				67BBFC19288D65FE00D3816B /* SettingTableViewController.swift */,
+				67BBFC1B288D6EDD00D3816B /* NickNameSettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -103,8 +122,11 @@
 			children = (
 				67E5992A288AC38E00F0C676 /* Damagochi.swift */,
 				67E5992D288AC57500F0C676 /* DamagochiInfo.swift */,
+				67C10A13288D32E3006C2D6C /* DamagochiTalk.swift */,
 				67E5992F288ACB5100F0C676 /* ColorSet.swift */,
 				67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */,
+				67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */,
+				67C10A09288CEC87006C2D6C /* UIButton+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +147,10 @@
 			dependencies = (
 			);
 			name = Damagochi;
+			packageProductDependencies = (
+				67C10A0C288D1053006C2D6C /* Toast */,
+				67C10A11288D3084006C2D6C /* IQKeyboardManagerSwift */,
+			);
 			productName = Damagochi;
 			productReference = 67E5990D288AA8EF00F0C676 /* Damagochi.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +179,10 @@
 				Base,
 			);
 			mainGroup = 67E59904288AA8EF00F0C676;
+			packageReferences = (
+				67C10A0B288D1053006C2D6C /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				67C10A10288D3084006C2D6C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 67E5990E288AA8EF00F0C676 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,15 +210,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BBFC1A288D65FE00D3816B /* SettingTableViewController.swift in Sources */,
 				67E59929288AB7B300F0C676 /* SelectCollectionViewCell.swift in Sources */,
 				67E59930288ACB5100F0C676 /* ColorSet.swift in Sources */,
 				67D608D0288B854E008BFB3B /* StartPopupViewController.swift in Sources */,
 				67E5992B288AC38E00F0C676 /* Damagochi.swift in Sources */,
+				67C10A08288CC7B5006C2D6C /* UITextField+Extension.swift in Sources */,
+				67BBFC1C288D6EDD00D3816B /* NickNameSettingViewController.swift in Sources */,
+				67C10A0A288CEC87006C2D6C /* UIButton+Extension.swift in Sources */,
+				67C10A14288D32E3006C2D6C /* DamagochiTalk.swift in Sources */,
 				67E59925288AACD100F0C676 /* SelectCollectionViewController.swift in Sources */,
 				67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */,
 				67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */,
 				67D608D2288B8B11008BFB3B /* UILabel+Extension.swift in Sources */,
 				67E5992E288AC57500F0C676 /* DamagochiInfo.swift in Sources */,
+				67D608D4288C95EA008BFB3B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +446,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67C10A0B288D1053006C2D6C /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		67C10A10288D3084006C2D6C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67C10A0C288D1053006C2D6C /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67C10A0B288D1053006C2D6C /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		67C10A11288D3084006C2D6C /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67C10A10288D3084006C2D6C /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67E59905288AA8EF00F0C676 /* Project object */;
 }

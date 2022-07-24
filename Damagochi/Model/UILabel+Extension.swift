@@ -10,8 +10,9 @@ import UIKit
 
 extension UILabel{
     
-    func damagochiFont(){
-        self.font = .systemFont(ofSize: 15)
+    func damagochiFont(fontSize: CGFloat = 15){
+        
+        self.font = .boldSystemFont(ofSize: fontSize)
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 5
         self.layer.borderColor = ColorSet.font.cgColor
