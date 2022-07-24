@@ -33,13 +33,14 @@ class MainViewController: UIViewController {
         waterTextField.underLine(placeholder: "물주세용")
         bobButton.buttonDesgin()
         waterButton.buttonDesgin()
+        damagochi = Damagochi(image: "", name: UserDefaults.standard.string(forKey: "damaName"), explain: "", damagochiLevelImage: UserDefaults.standard.array(forKey: "image") as? [String])
+        damagochiNameLabel.text = damagochi.name
+        levelUpdateCheck()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        damagochi = Damagochi(image: "", name: UserDefaults.standard.string(forKey: "damaName"), explain: "", damagochiLevelImage: UserDefaults.standard.array(forKey: "image") as? [String])
-        damagochiNameLabel.text = damagochi.name
-        levelUpdateCheck()
+   
         nickname = UserDefaults.standard.string(forKey: "nickName") ?? "대장"
         navigationItem.title = "\(nickname!)님의 다마고치"
         desginSetting()
