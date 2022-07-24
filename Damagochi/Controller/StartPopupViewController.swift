@@ -55,14 +55,16 @@ class StartPopupViewController: UIViewController {
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         UserDefaults.standard.set(selectdamagochi.name, forKey: "damaName")
         UserDefaults.standard.set(selectdamagochi.damagochiLevelImage, forKey: "image")
-        //vc.damagochi = selectdamagochi
-        let navi = UINavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        self.present(navi, animated: true)
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.makeKeyAndVisible()
         
     }
     
