@@ -48,16 +48,18 @@ class MainViewController: UIViewController {
     
     func desginSetting(){
         view.backgroundColor = ColorSet.background
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationController?.navigationBar.tintColor = ColorSet.font
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorSet.font]
         
         //standard, scrollEdge 설정
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        appearance.backgroundColor = ColorSet.background
-//        appearance.titleTextAttributes = [.foregroundColor: ColorSet.font]
-//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = ColorSet.background
+        appearance.titleTextAttributes = [.foregroundColor: ColorSet.font]
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.standardAppearance = appearance
+
         
         damagochiNameLabel.damagochiFont(fontSize: 17)
         talkLabel.textColor = ColorSet.font
@@ -157,3 +159,6 @@ class MainViewController: UIViewController {
     }
 
 }
+
+
+

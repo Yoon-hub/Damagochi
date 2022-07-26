@@ -26,7 +26,6 @@ class SettingTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("3")
         nickNameLabel.text = UserDefaults.standard.string(forKey: "nickName") ?? "대장님"
     }
     
