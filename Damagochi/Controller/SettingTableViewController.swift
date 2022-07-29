@@ -67,6 +67,8 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "UINaiv") as? UINavigationController
             
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            
             sceneDelegate?.window?.rootViewController = vc
             sceneDelegate?.window?.makeKeyAndVisible()
         }

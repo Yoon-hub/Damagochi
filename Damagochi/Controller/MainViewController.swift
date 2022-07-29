@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationController?.navigationBar.tintColor = ColorSet.font
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorSet.font]
+        //navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorSet.font]
         
         //standard, scrollEdge 설정
         let appearance = UINavigationBarAppearance()

@@ -11,6 +11,7 @@ class StartPopupViewController: UIViewController {
     
     var selectdamagochi: Damagochi!
     var startButtonTitle = "시작하기"
+    let notificationCenter = UNUserNotificationCenter.current()
     
     @IBOutlet weak var damagochiImageView: UIImageView!
     @IBOutlet weak var damagochiLabel: UILabel!
@@ -63,11 +64,39 @@ class StartPopupViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         
+        requestAuthorization() // 알림 등록
         sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.makeKeyAndVisible()
         
     }
     
     
+    //MARK: - Local Notification
+    func requestAuthorization(){
+        let authorizationOptions = UNAuthorizationOptions(arrayLiteral: .alert)
+        
+        notificationCenter.requestAuthorization(options: authorizationOptions) { succes, error in
+            if succes{
+                self.sendNotification()
+            } else {
+                print("error!")
+            }
+        }
+    }
+    
 
+    func sendNotification(){
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "밥줄시간입니다!!!!"
+        notificationContent.body = "\(UserDefaults.standard.string(forKey: "damaName") ?? "뭐")가 배가 고파요ㅠㅠㅠ"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "1", content: notificationContent, trigger: trigger)
+        notificationCenter.add(request)
+        
+    }
+    
+    
+    
 }
