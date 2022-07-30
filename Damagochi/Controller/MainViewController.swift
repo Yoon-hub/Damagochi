@@ -9,9 +9,11 @@ import UIKit
 import Toast
 
 class MainViewController: UIViewController {
+    static let userDefaultName = "대장"
+    static let identifier = "MainViewController"
     var damagochi : Damagochi!
     
-    var level = UserDefaults.standard.dictionary(forKey: "level") as? [String:Int] ?? ["level" : 1, "bob" : 0, "water": 0] // 이게 돼??????????
+    var level = UserDefaults.standard.dictionary(forKey: UserDefaultsEnum.level.rawValue) as? [String:Int] ?? ["level" : 1, "bob" : 0, "water": 0] // 이게 돼??????????
     var nickname : String!
    
 
@@ -33,7 +35,7 @@ class MainViewController: UIViewController {
         waterTextField.underLine(placeholder: "물주세용")
         bobButton.buttonDesgin()
         waterButton.buttonDesgin()
-        damagochi = Damagochi(image: "", name: UserDefaults.standard.string(forKey: "damaName"), explain: "", damagochiLevelImage: UserDefaults.standard.array(forKey: "image") as? [String])
+        damagochi = Damagochi(image: "", name: UserDefaults.standard.string(forKey: UserDefaultsEnum.damaName.rawValue), explain: "", damagochiLevelImage: UserDefaults.standard.array(forKey: UserDefaultsEnum.image.rawValue) as? [String])
         damagochiNameLabel.text = damagochi.name
         levelUpdateCheck()
     }
@@ -41,7 +43,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
    
-        nickname = UserDefaults.standard.string(forKey: "nickName") ?? "대장"
+        nickname = UserDefaults.standard.string(forKey: UserDefaultsEnum.nickName.rawValue) ?? MainViewController.userDefaultName
         navigationItem.title = "\(nickname!)님의 다마고치"
         desginSetting()
     }
@@ -70,7 +72,7 @@ class MainViewController: UIViewController {
     @IBAction func bobButtonClicked(_ sender: Any) {
         view.endEditing(true)
         guard let bobtext = bobTextField.text, Int(bobtext) != nil else {
-            if bobTextField.text == ""{
+            if bobTextField.text!.isEmpty{
                 level["bob"]! += 1
                 levelUpdateCheck()
             }else{
@@ -98,7 +100,7 @@ class MainViewController: UIViewController {
         view.endEditing(true)
         guard let watertext = waterTextField.text, Int(watertext) != nil else {
           
-            if waterTextField.text == ""{
+            if waterTextField.text!.isEmpty{
                 level["water"]! += 1
                 levelUpdateCheck()
             }else{
@@ -131,11 +133,11 @@ class MainViewController: UIViewController {
         
         let talk = DamagochiTalk.talk.randomElement()
         talkLabel.text = talkLabel.text == talk ? "과제 너무 시렁라ㅣㅁ어라어라어라어라" : talk
-        UserDefaults.standard.set(level, forKey: "level")
+        UserDefaults.standard.set(level, forKey: UserDefaultsEnum.level.rawValue)
     }
 
     func levelCalculate(){
-        var sum = Double(level["bob"]!) / 5 + Double(level["water"]!)/2
+        let sum = Double(level["bob"]!) / 5 + Double(level["water"]!)/2
         
         switch sum{
         case 0..<20 : level["level"] = 1
@@ -151,9 +153,10 @@ class MainViewController: UIViewController {
         }
         
     }
+    
     @objc func settingButtonClicked(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
+        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as! SettingTableViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

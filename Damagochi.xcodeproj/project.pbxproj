@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		678D9BC82895617D0095D338 /* UserDefaultsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D9BC72895617D0095D338 /* UserDefaultsEnum.swift */; };
 		67BBFC1A288D65FE00D3816B /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBFC19288D65FE00D3816B /* SettingTableViewController.swift */; };
 		67BBFC1C288D6EDD00D3816B /* NickNameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BBFC1B288D6EDD00D3816B /* NickNameSettingViewController.swift */; };
 		67C10A08288CC7B5006C2D6C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		678D9BC72895617D0095D338 /* UserDefaultsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsEnum.swift; sourceTree = "<group>"; };
 		67BBFC19288D65FE00D3816B /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		67BBFC1B288D6EDD00D3816B /* NickNameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameSettingViewController.swift; sourceTree = "<group>"; };
 		67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				67D608D1288B8B11008BFB3B /* UILabel+Extension.swift */,
 				67C10A07288CC7B5006C2D6C /* UITextField+Extension.swift */,
 				67C10A09288CEC87006C2D6C /* UIButton+Extension.swift */,
+				678D9BC72895617D0095D338 /* UserDefaultsEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				67E59911288AA8EF00F0C676 /* AppDelegate.swift in Sources */,
 				67E59913288AA8EF00F0C676 /* SceneDelegate.swift in Sources */,
 				67D608D2288B8B11008BFB3B /* UILabel+Extension.swift in Sources */,
+				678D9BC82895617D0095D338 /* UserDefaultsEnum.swift in Sources */,
 				67E5992E288AC57500F0C676 /* DamagochiInfo.swift in Sources */,
 				67D608D4288C95EA008BFB3B /* MainViewController.swift in Sources */,
 			);

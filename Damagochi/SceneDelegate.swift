@@ -18,18 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
 
-        if UserDefaults.standard.string(forKey: "damaName") == nil{
+        if UserDefaults.standard.string(forKey: UserDefaultsEnum.damaName.rawValue) == nil{
 
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "SelectCollectionViewController") as? SelectCollectionViewController
-            
-            
+            let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier
+            ) as? SelectCollectionViewController
             
             window?.rootViewController = UINavigationController(rootViewController: vc!)
         } else {
 
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
             
             window?.rootViewController = UINavigationController(rootViewController: vc)
         }

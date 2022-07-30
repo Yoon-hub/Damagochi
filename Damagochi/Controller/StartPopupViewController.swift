@@ -8,8 +8,10 @@
 import UIKit
 
 class StartPopupViewController: UIViewController {
+    static let identifer = "StartPopupViewController"
     
     var selectdamagochi: Damagochi!
+    var notMake = false
     var startButtonTitle = "시작하기"
     let notificationCenter = UNUserNotificationCenter.current()
     
@@ -41,12 +43,8 @@ class StartPopupViewController: UIViewController {
     }
     
     func buttonDesgin(button: UIButton){
-        button.tintColor = ColorSet.font
-        button.layer.borderColor = UIColor.systemGray5.cgColor
-        button.layer.borderWidth = 2
-        button.layer.cornerRadius = 1
-        
-        if selectdamagochi.name == "준비중이에요"{
+        button.startPopViewButtonDesgin()
+        if notMake{
             startButton.isHidden = true
         }
     }
@@ -56,13 +54,13 @@ class StartPopupViewController: UIViewController {
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        UserDefaults.standard.set(selectdamagochi.name, forKey: "damaName")
-        UserDefaults.standard.set(selectdamagochi.damagochiLevelImage, forKey: "image")
+        UserDefaults.standard.set(selectdamagochi.name, forKey: UserDefaultsEnum.damaName.rawValue)
+        UserDefaults.standard.set(selectdamagochi.damagochiLevelImage, forKey: UserDefaultsEnum.image.rawValue)
         
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
         
         requestAuthorization() // 알림 등록
         sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
@@ -88,7 +86,7 @@ class StartPopupViewController: UIViewController {
     func sendNotification(){
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "밥줄시간입니다!!!!"
-        notificationContent.body = "\(UserDefaults.standard.string(forKey: "damaName") ?? "뭐")가 배가 고파요ㅠㅠㅠ"
+        notificationContent.body = "\(UserDefaults.standard.string(forKey: UserDefaultsEnum.damaName.rawValue) ?? "뭐")가 배가 고파요ㅠㅠㅠ"
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         

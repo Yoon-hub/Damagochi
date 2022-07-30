@@ -5,7 +5,6 @@
 //  Created by 최윤제 on 2022/07/23.
 //
 
-import Foundation
 import UIKit
 
 extension UILabel{
@@ -17,6 +16,7 @@ extension UILabel{
         self.layer.cornerRadius = 5
         self.layer.borderColor = ColorSet.font.cgColor
         self.textColor = ColorSet.font
+        
     }
     func damagochiFontNomalFont(){
         self.font = .systemFont(ofSize: 15)

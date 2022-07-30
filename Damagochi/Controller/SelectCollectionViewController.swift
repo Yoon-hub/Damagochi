@@ -10,8 +10,10 @@ import UIKit
 
 
 class SelectCollectionViewController: UICollectionViewController {
+    static let identifier = "SelectCollectionViewController"
     let damagochiInfo = DamagochiInfo()
     var titleName = "다마고치 선택하기"
+    var changeMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class SelectCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectCollectionViewCell", for: indexPath) as! SelectCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCollectionViewCell.identifier, for: indexPath) as! SelectCollectionViewCell
         
         indexPath.row <= damagochiInfo.damagochi.count - 1 ? cell.setting(data: damagochiInfo.damagochi[indexPath.row]) : cell.setting(data: damagochiInfo.damagochi.last!)
         return cell
@@ -50,13 +52,16 @@ class SelectCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "StartPopupViewController") as! StartPopupViewController
-        if titleName == "다마고치 변경하기"{
+        let vc = sb.instantiateViewController(withIdentifier: StartPopupViewController.identifer ) as! StartPopupViewController
+        if changeMode{
             vc.startButtonTitle = "변경하기"
         }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.selectdamagochi = indexPath.row <= damagochiInfo.damagochi.count - 1 ? damagochiInfo.damagochi[indexPath.row] : damagochiInfo.damagochi.last
+        
+        vc.notMake = indexPath.row  > damagochiInfo.damagochi.count - 2 ? true : false
+        
         
         self.present(vc, animated: true)
         

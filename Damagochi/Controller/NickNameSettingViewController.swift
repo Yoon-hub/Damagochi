@@ -8,7 +8,7 @@
 import UIKit
 
 class NickNameSettingViewController: UIViewController {
-
+    static let identifier = "NickNameSettingViewController"
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
