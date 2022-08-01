@@ -10,10 +10,9 @@ import Toast
 
 class MainViewController: UIViewController {
     static let userDefaultName = "대장"
-    static let identifier = "MainViewController"
     var damagochi : Damagochi!
     
-    var level = UserDefaults.standard.dictionary(forKey: UserDefaultsEnum.level.rawValue) as? [String:Int] ?? ["level" : 1, "bob" : 0, "water": 0] // 이게 돼??????????
+    var level = UserDefaultsManager.standard.level// 이게 돼??????????
     var nickname : String!
    
 
@@ -35,7 +34,7 @@ class MainViewController: UIViewController {
         waterTextField.underLine(placeholder: "물주세용")
         bobButton.buttonDesgin()
         waterButton.buttonDesgin()
-        damagochi = Damagochi(image: "", name: UserDefaults.standard.string(forKey: UserDefaultsEnum.damaName.rawValue), explain: "", damagochiLevelImage: UserDefaults.standard.array(forKey: UserDefaultsEnum.image.rawValue) as? [String])
+        damagochi = Damagochi(image: "", name: UserDefaultsManager.standard.damaName, explain: "", damagochiLevelImage: UserDefaultsManager.standard.image)
         damagochiNameLabel.text = damagochi.name
         levelUpdateCheck()
     }
@@ -43,7 +42,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
    
-        nickname = UserDefaults.standard.string(forKey: UserDefaultsEnum.nickName.rawValue) ?? MainViewController.userDefaultName
+        nickname = UserDefaultsManager.standard.nickName
         navigationItem.title = "\(nickname!)님의 다마고치"
         desginSetting()
     }
@@ -133,7 +132,7 @@ class MainViewController: UIViewController {
         
         let talk = DamagochiTalk.talk.randomElement()
         talkLabel.text = talkLabel.text == talk ? "과제 너무 시렁라ㅣㅁ어라어라어라어라" : talk
-        UserDefaults.standard.set(level, forKey: UserDefaultsEnum.level.rawValue)
+        UserDefaultsManager.standard.level = level
     }
 
     func levelCalculate(){
@@ -156,7 +155,7 @@ class MainViewController: UIViewController {
     
     @objc func settingButtonClicked(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as! SettingTableViewController
+        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.reuseidetifier) as! SettingTableViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -8,7 +8,6 @@
 import UIKit
 
 class StartPopupViewController: UIViewController {
-    static let identifer = "StartPopupViewController"
     
     var selectdamagochi: Damagochi!
     var notMake = false
@@ -54,13 +53,13 @@ class StartPopupViewController: UIViewController {
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        UserDefaults.standard.set(selectdamagochi.name, forKey: UserDefaultsEnum.damaName.rawValue)
-        UserDefaults.standard.set(selectdamagochi.damagochiLevelImage, forKey: UserDefaultsEnum.image.rawValue)
+        UserDefaultsManager.standard.damaName = selectdamagochi.name!
+        UserDefaultsManager.standard.image = selectdamagochi.damagochiLevelImage!
         
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.reuseidetifier) as! MainViewController
         
         requestAuthorization() // 알림 등록
         sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: vc)
@@ -86,7 +85,7 @@ class StartPopupViewController: UIViewController {
     func sendNotification(){
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "밥줄시간입니다!!!!"
-        notificationContent.body = "\(UserDefaults.standard.string(forKey: UserDefaultsEnum.damaName.rawValue) ?? "뭐")가 배가 고파요ㅠㅠㅠ"
+        notificationContent.body = "\(UserDefaultsManager.standard.damaName) 가 배고파요"
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         

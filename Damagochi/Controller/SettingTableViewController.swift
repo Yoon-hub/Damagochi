@@ -9,7 +9,6 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
-    static let identifier = "SettingTableViewController"
     @IBOutlet var tableViewCell: [UITableViewCell]!
     
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -26,7 +25,7 @@ class SettingTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        nickNameLabel.text = UserDefaults.standard.string(forKey: UserDefaultsEnum.nickName.rawValue) ?? MainViewController.userDefaultName
+        nickNameLabel.text = UserDefaultsManager.standard.nickName 
     }
     
 
@@ -42,14 +41,14 @@ class SettingTableViewController: UITableViewController {
     
     func nickNameChanged(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: NickNameSettingViewController.identifier) as! NickNameSettingViewController
+        let vc = sb.instantiateViewController(withIdentifier: NickNameSettingViewController.reuseidetifier) as! NickNameSettingViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func changeDamagochi(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as! SelectCollectionViewController
+        let vc = sb.instantiateViewController(withIdentifier: SelectCollectionViewController.reuseidetifier) as! SelectCollectionViewController
         vc.titleName = "다마고치 변경하기"
         vc.changeMode = true
         self.navigationController?.pushViewController(vc, animated: true)
@@ -73,11 +72,14 @@ class SettingTableViewController: UITableViewController {
             sceneDelegate?.window?.rootViewController = vc
             sceneDelegate?.window?.makeKeyAndVisible()
         }
+
         let cancel = UIAlertAction(title: "아냐!", style: .default)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
+    
+ 
     
     
 

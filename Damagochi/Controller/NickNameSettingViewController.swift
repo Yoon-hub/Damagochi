@@ -8,12 +8,12 @@
 import UIKit
 
 class NickNameSettingViewController: UIViewController {
-    static let identifier = "NickNameSettingViewController"
+
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "\(UserDefaults.standard.string(forKey: "nickName") ?? "대장")님 이름 정하기"
+        navigationItem.title = "\(UserDefaults.standard.string(forKey: "nickName") ?? MainViewController.userDefaultName)님 이름 정하기"
         navigationItem.rightBarButtonItem = .init(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
         textField.underLine(placeholder: "이름을 입력하세용")
         view.backgroundColor = ColorSet.background

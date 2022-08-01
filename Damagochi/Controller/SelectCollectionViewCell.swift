@@ -8,7 +8,7 @@
 import UIKit
 
 class SelectCollectionViewCell: UICollectionViewCell {
-    static let identifier = "SelectCollectionViewCell"
+    
     @IBOutlet weak var damagochiImageView: UIImageView!
     @IBOutlet weak var damagochiLabel: UILabel!
     

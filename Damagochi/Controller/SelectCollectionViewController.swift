@@ -10,7 +10,7 @@ import UIKit
 
 
 class SelectCollectionViewController: UICollectionViewController {
-    static let identifier = "SelectCollectionViewController"
+
     let damagochiInfo = DamagochiInfo()
     var titleName = "다마고치 선택하기"
     var changeMode = false
@@ -29,7 +29,7 @@ class SelectCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCollectionViewCell.identifier, for: indexPath) as! SelectCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectCollectionViewCell.reuseidetifier, for: indexPath) as! SelectCollectionViewCell
         
         indexPath.row <= damagochiInfo.damagochi.count - 1 ? cell.setting(data: damagochiInfo.damagochi[indexPath.row]) : cell.setting(data: damagochiInfo.damagochi.last!)
         return cell
@@ -52,7 +52,7 @@ class SelectCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: StartPopupViewController.identifer ) as! StartPopupViewController
+        let vc = sb.instantiateViewController(withIdentifier: StartPopupViewController.reuseidetifier ) as! StartPopupViewController
         if changeMode{
             vc.startButtonTitle = "변경하기"
         }
